@@ -1,2 +1,11 @@
 # kmeans-com-python
 implementação do kmeans para a disciplina de inteligência computacional 
+
+Resposta para a pergunta:
+  Para simplificar a explicação de como o algoritmo funciona vou apresentar o algoritmo K-Means em cinco passos:
+
+PASSO 01: Fornecer valores para os centroides: Neste passo os k centroides devem receber valores iniciais. No início do algoritmo geralmente escolhe-se os k primeiros pontos da tabela. Também é importante colocar todos os pontos em um centroide qualquer para que o algoritmo possa iniciar seu processamento.
+PASSO 02: Gerar uma matriz de distância entre cada ponto e os centroides: Neste passo, a distância entre cada ponto e os centroides é calculada. A parte mais ‘pesada’ de cálculos ocorre neste passo pois se temos N pontos e k centroides teremos que calcular N x k distâncias neste passo.
+PASSO 03: Colocar cada ponto nas classes de acordo com a sua distância do centroide da classe: aqui, os pontos são classificados de acordo com sua distância dos centroides de cada classe. A classificação funciona assim: o centroide que está mais perto deste ponto vai ‘incorporá-lo’, ou seja, o ponto vai pertencer à classe representada pelo centroide que está mais perto do ponto. É importante dizer que o algoritmo termina se nenhum ponto ‘mudar’ de classe, ou seja, se nenhum ponto for ‘incorporado’ a uma classe diferente da que ele estava antes deste passo.
+PASSO 04: Calcular os novos centroides para cada classe: neste momento, os valores das coordenadas dos centroides são refinados. Para cada classe que possui mais de um ponto o novo valor dos centroides é calculado fazendo-se a média de cada atributo de todos os pontos que pertencem a esta classe.
+PASSO 05: Repetir até a convergência: o algoritmo volta para o PASSO 02 repetindo iterativamente o refinamento do cálculo das coordenadas dos centroides. Notem que desta maneira teremos uma classificação que coloca cada ponto em apenas uma classe. Desta maneira dizemos que este algoritmo faz uma classificação hard (hard clustering) uma vez que cada ponto só pode ser classificado em uma classe. Outros algoritmos trabalham com o conceito de classificação soft onde existe uma métrica que diz o quão ‘dentro’ de cada classe o ponto está.
